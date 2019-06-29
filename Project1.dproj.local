@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2019.06.29 08:11:41.613,=C:\Users\Виктор-ПК\Downloads\Delphi7-clicker-master\Delphi7-clicker-master\Unit2.pas</Transaction>
-    <Transaction>2019.06.29 08:14:08.984,C:\Users\Виктор-ПК\Downloads\Delphi7-clicker-master\Delphi7-clicker-master\Confi.dfm=C:\Users\Виктор-ПК\Downloads\Delphi7-clicker-master\Delphi7-clicker-master\Unit2.dfm</Transaction>
-    <Transaction>2019.06.29 08:14:08.984,C:\Users\Виктор-ПК\Downloads\Delphi7-clicker-master\Delphi7-clicker-master\Confi.pas=C:\Users\Виктор-ПК\Downloads\Delphi7-clicker-master\Delphi7-clicker-master\Unit2.pas</Transaction>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.984,C:\Users\Виктор-ПК\Downloads\Delphi7-clicker-master\Delphi7-clicker-master\Unit2.dfm=C:\Users\Виктор-ПК\Downloads\Delphi7-clicker-master\Delphi7-clicker-master\Confi.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.984,C:\Users\Виктор-ПК\Downloads\Delphi7-clicker-master\Delphi7-clicker-master\Unit2.pas=C:\Users\Виктор-ПК\Downloads\Delphi7-clicker-master\Delphi7-clicker-master\Confi.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.613,=C:\Users\Виктор-ПК\Downloads\Delphi7-clicker-master\Delphi7-clicker-master\Unit2.pas</Transaction>
   </Transactions>
 </BorlandProject>

@@ -8,32 +8,17 @@ uses
 
 type
   TForm1 = class(TForm)
-    Edit1: TEdit;
-    Label1: TLabel;
     clicker: TTimer;
-    Label2: TLabel;
-    Edit2: TEdit;
-    Button1: TButton;
-    Button2: TButton;
-    Label3: TLabel;
-    Button3: TButton;
-    Label4: TLabel;
-    Label5: TLabel;
-    Label6: TLabel;
     Timer1: TTimer;
     Capt: TButton;
 
     procedure clickerTimer(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
-    procedure Button1Click(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
-
-    procedure Button3Click(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
 
 
     procedure CreatClick(Sender: TObject);
     procedure CaptClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
 
   private
     { Private declarations }
@@ -100,6 +85,20 @@ begin
 end;
 
 
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+numberofbutton:=118;
+x:=0;
+SetCursorPos(30,30);
+Form1.TransparentColorValue := clblack;
+Form1.TransparentColor := true;
+Form1.FormStyle:=fsStayOnTop;
+btnB := false;
+
+
+
+
+end;
 procedure TForm1.clickerTimer(Sender: TObject);
 var
 zna4: integer;
@@ -107,11 +106,10 @@ begin
 SimulateKeystroke(numberofbutton, 0);
 
 z:=z+1;
-label5.caption :=  inttostr(z);
+
 if z= 20 then
 begin
 z:=0;
-clicker.Interval:= strtoint(Edit1.Text)*1000+100;
 end;
 
     if x=0 then
@@ -140,7 +138,6 @@ end;
     end;
 
 
-label3.caption:=IntToStr(clicker.Interval);
 end;
 
 
@@ -150,21 +147,7 @@ begin
 
 end;
 
-procedure TForm1.FormCreate(Sender: TObject);
-begin
-numberofbutton:=118;
-x:=0;
-SetCursorPos(30,30);
-//Form1.Color := clRed;
-Form1.TransparentColorValue := clblack;
-Form1.TransparentColor := true;
-Form1.FormStyle:=fsStayOnTop;
-btnB := false;
 
-
-
-
-end;
 
 
 
@@ -172,29 +155,6 @@ procedure TForm1.Timer1Timer(Sender: TObject);
 begin
 mouse_event(MOUSEEVENTF_RightDOWN,30,30,0,0);
 mouse_event(MOUSEEVENTF_LEFTUP,30,30,0,0);
-end;
-
-procedure TForm1.Button1Click(Sender: TObject);
-begin
-clicker.Enabled:=true;
-label3.Caption :=inttostr(strtoint(edit1.text)*1000+100);
-end;
-
-procedure TForm1.Button2Click(Sender: TObject);
-begin
-clicker.Enabled:=false;
-end;
-
-
-
-
-procedure TForm1.Button3Click(Sender: TObject);
-begin
-    if edit1.Text <> '' then
-    clicker.Interval := strtoint(edit1.Text)*1000+100;
-
-    if edit1.Text <> '' then
-    numberofbutton:=91;
 end;
 
 
