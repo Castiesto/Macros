@@ -1,6 +1,6 @@
 object Form2: TForm2
-  Left = 0
-  Top = 0
+  Left = 259
+  Top = 115
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Form2'
@@ -13,9 +13,11 @@ object Form2: TForm2
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poDesigned
   OnActivate = FormActivate
   OnCreate = FormCreate
   OnDestroy = FormDestroy
+  OnMouseDown = FormMouseDown
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -27,10 +29,10 @@ object Form2: TForm2
   end
   object Button1: TButton
     Left = 219
-    Top = 96
+    Top = 89
     Width = 75
     Height = 25
-    Caption = 'Button1'
+    Caption = 'Add'
     TabOrder = 0
     OnClick = Button1Click
   end
@@ -54,5 +56,12 @@ object Form2: TForm2
     Width = 121
     Height = 21
     TabOrder = 2
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 10
+    OnTimer = Timer1Timer
+    Left = 128
+    Top = 168
   end
 end

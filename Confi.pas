@@ -14,25 +14,28 @@ type
     ComboBox1: TComboBox;
     Edit1: TEdit;
     Label1: TLabel;
+    Timer1: TTimer;
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure FormActivate(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
+    procedure FormMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+
   private
     { Private declarations }
     FHook: THook;
     procedure Hooking;
   public
     { Public declarations }
-
   end;
 
   Dref = class
-    ImB:  TImage;
+    FB:  TForm;
     TextK: String;
 
-    constructor Create(o: Dref);
-
+    constructor Create;
   end;
 
 
@@ -40,6 +43,10 @@ type
 var
   Form2: TForm2;
   But: array[0..100] of Dref;
+  Frm: array[0..100] of TFORM;
+  bl: Boolean;
+  Helem: array of Dref;
+  Razr:boolean;
 
 implementation
 
@@ -62,11 +69,9 @@ begin
 
       ScanCode := LLKeyBoardHook.KeyName.ScanCode;
 
-      if ScanCode = 70 then begin
+      if ScanCode = 89 then begin
         HookMsg.Result := 1;
-        Form1.SimulateKeyDown(17);
-        Form1.SimulateKeystroke(86,0);
-        Form1.SimulateKeyUp(17);
+        Timer1.Enabled := not Timer1.Enabled;
       end;
 
 //      if not(ScanCode in [VK_NUMPAD0 .. VK_NUMPAD9, VK_0 .. VK_9]) then
@@ -79,9 +84,26 @@ begin
     end;
 end;
 
-constructor Dref.Create(o: Dref);
+procedure TForm2.Timer1Timer(Sender: TObject);
+
 begin
-//  ImB.Create();
+
+//  mouse_event(MOUSEEVENTF_LEFTDOWN,A.X,A.Y,0,0);
+//  mouse_event(MOUSEEVENTF_LEFTUP,A.X,A.Y,0,0);
+end;
+
+constructor Dref.Create;
+begin
+  FB := TForm.Create(Form1);
+  FB.Top := 50;
+  FB.Left := 50;
+  FB.Height := 20;
+  FB.Width := 200;
+  FB.Show;
+  FB.BorderIcons := [];
+  FB.BorderStyle := bsNone;
+  FB.Tag := Length(Helem);
+  FB.OnMouseDown := Form2.FormMouseDown;
 end;
 
 
@@ -92,6 +114,8 @@ procedure TForm2.Button1Click(Sender: TObject);
 begin
 //  FHook.Active := not FHook.Active;
 //  Button1.Caption := Captions[not FHook.Active];
+  SetLength(Helem,Length(Helem) + 1);
+  Helem[Length(Helem)] := Dref.Create;
 end;
 
 procedure TForm2.FormActivate(Sender: TObject);
@@ -102,15 +126,29 @@ end;
 procedure TForm2.FormCreate(Sender: TObject);
 begin
   Hooking;
+
 //  ShowMessage(Clipboard.asText);
 //   Form1.
-
+   bl := true;
 end;
+
+
 
 
 procedure TForm2.FormDestroy(Sender: TObject);
 begin
+
   FHook.Active := false;
+end;
+
+
+
+procedure TForm2.FormMouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+begin
+  if (Sender as TForm).Tag = 1 then
+    SHowMessage('Работает');
+
 end;
 
 end.

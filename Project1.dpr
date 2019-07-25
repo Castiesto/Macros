@@ -2,10 +2,11 @@ program Project1;
 
 uses
   Forms,
-  Unit1 in 'Unit1.pas' {Form1},
+  Macros in 'Macros.pas' {Form1},
   Vcl.Themes,
   Vcl.Styles,
-  Confi in 'Confi.pas' {Form2};
+  Confi in 'Confi.pas' {Form2},
+  Winapi.Hooks in 'Winapi.Hooks.pas';
 
 {$R *.res}
 

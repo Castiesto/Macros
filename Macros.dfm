@@ -18,6 +18,7 @@ object Form1: TForm1
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   OnKeyPress = FormKeyPress
+  OnMouseMove = FormMouseMove
   PixelsPerInch = 96
   TextHeight = 13
   object Capt: TButton
@@ -29,14 +30,6 @@ object Form1: TForm1
     TabOrder = 0
     OnClick = CaptClick
   end
-  object Button1: TButton
-    Left = 216
-    Top = 192
-    Width = 75
-    Height = 25
-    Caption = 'Button1'
-    TabOrder = 1
-  end
   object clicker: TTimer
     Enabled = False
     OnTimer = clickerTimer
@@ -45,6 +38,7 @@ object Form1: TForm1
   end
   object Timer1: TTimer
     Enabled = False
+    Interval = 1
     OnTimer = Timer1Timer
     Left = 248
     Top = 104

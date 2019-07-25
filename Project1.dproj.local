@@ -1,8 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.706,E:\Проекты\Macr\Unit1.pas=E:\Проекты\Macr\Macros.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.629,=E:\Проекты\Macr\Winapi.Hooks.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.984,C:\Users\Виктор-ПК\Downloads\Delphi7-clicker-master\Delphi7-clicker-master\Unit2.dfm=C:\Users\Виктор-ПК\Downloads\Delphi7-clicker-master\Delphi7-clicker-master\Confi.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.984,C:\Users\Виктор-ПК\Downloads\Delphi7-clicker-master\Delphi7-clicker-master\Unit2.pas=C:\Users\Виктор-ПК\Downloads\Delphi7-clicker-master\Delphi7-clicker-master\Confi.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.613,=C:\Users\Виктор-ПК\Downloads\Delphi7-clicker-master\Delphi7-clicker-master\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.706,E:\Проекты\Macr\Unit1.dfm=E:\Проекты\Macr\Macros.dfm</Transaction>
   </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Confi.pas"/>
+    <File Path="Confi.dfm"/>
+    <File Path="Macros.pas"/>
+    <File Path="Macros.dfm"/>
+    <File Path="Winapi.Hooks.pas"/>
+  </ProjectSortOrder>
 </BorlandProject>

@@ -11,7 +11,6 @@ type
     clicker: TTimer;
     Timer1: TTimer;
     Capt: TButton;
-    Button1: TButton;
 
     procedure clickerTimer(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
@@ -22,6 +21,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormKeyPress(Sender: TObject; var Key: Char);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure FormMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Integer);
 
   private
     { Private declarations }
@@ -105,8 +105,8 @@ Form1.FormStyle:=fsStayOnTop;
 btnB := false;
 
 
-
 end;
+
 procedure TForm1.FormKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
@@ -126,6 +126,12 @@ begin
 //   SimulateKeystroke(86,0);
   showMessage('ds');
  end;
+end;
+
+procedure TForm1.FormMouseMove(Sender: TObject; Shift: TShiftState; X,
+  Y: Integer);
+begin
+  (Sender as TForm).Hide;
 end;
 
 procedure TForm1.clickerTimer(Sender: TObject);
@@ -181,9 +187,10 @@ end;
 
 
 procedure TForm1.Timer1Timer(Sender: TObject);
+
 begin
-mouse_event(MOUSEEVENTF_RightDOWN,30,30,0,0);
-mouse_event(MOUSEEVENTF_LEFTUP,30,30,0,0);
+
+  Frm[0].Show;
 end;
 
 
